@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-dic-2016 9:17:49 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="model.Sorteos" table="Sorteos" schema="dbo" optimistic-lock="version">
+        <id name="idSorteo" type="long">
+            <column name="IdSorteo" />
+            <generator class="assigned" />
+        </id>
+        <property name="fechaSorteo" type="timestamp">
+            <column name="FechaSorteo" length="16" not-null="true" />
+        </property>
+        <property name="num1" type="java.lang.Byte">
+            <column name="num1" />
+        </property>
+        <property name="num2" type="java.lang.Byte">
+            <column name="num2" />
+        </property>
+        <property name="num3" type="java.lang.Byte">
+            <column name="num3" />
+        </property>
+        <property name="num4" type="java.lang.Byte">
+            <column name="num4" />
+        </property>
+        <property name="num5" type="java.lang.Byte">
+            <column name="num5" />
+        </property>
+        <property name="num6" type="java.lang.Byte">
+            <column name="num6" />
+        </property>
+        <property name="comp" type="java.lang.Byte">
+            <column name="comp" />
+        </property>
+        <property name="rein" type="java.lang.Byte">
+            <column name="rein" />
+        </property>
+        <set name="boletoses" table="Boletos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IdSorteo" not-null="true" />
+            </key>
+            <one-to-many class="model.Boletos" />
+        </set>
+    </class>
+</hibernate-mapping>
