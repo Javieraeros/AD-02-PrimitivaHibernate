@@ -1,5 +1,5 @@
-package model;
-// Generated 13-dic-2016 13:35:59 by Hibernate Tools 4.3.1.Final
+// default package
+// Generated 14-dic-2016 13:35:27 by Hibernate Tools 4.3.1.Final
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -28,7 +28,7 @@ public class Boletos implements java.io.Serializable {
 	private byte tipoApuesta;
 	private Byte numeroAcertados;
 	private BigDecimal premio;
-	private Set numerosBoletoses = new HashSet(0);
+	private Set<NumerosBoletos> numerosBoletoses = new HashSet<NumerosBoletos>(0);
 
 	public Boletos() {
 	}
@@ -41,7 +41,7 @@ public class Boletos implements java.io.Serializable {
 	}
 
 	public Boletos(BoletosId id, Sorteos sorteos, byte reintegro, byte tipoApuesta, Byte numeroAcertados,
-			BigDecimal premio, Set numerosBoletoses) {
+			BigDecimal premio, Set<NumerosBoletos> numerosBoletoses) {
 		this.id = id;
 		this.sorteos = sorteos;
 		this.reintegro = reintegro;
@@ -110,11 +110,11 @@ public class Boletos implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "boletos")
-	public Set getNumerosBoletoses() {
+	public Set<NumerosBoletos> getNumerosBoletoses() {
 		return this.numerosBoletoses;
 	}
 
-	public void setNumerosBoletoses(Set numerosBoletoses) {
+	public void setNumerosBoletoses(Set<NumerosBoletos> numerosBoletoses) {
 		this.numerosBoletoses = numerosBoletoses;
 	}
 

@@ -1,5 +1,5 @@
-package model;
-// Generated 13-dic-2016 13:35:59 by Hibernate Tools 4.3.1.Final
+// default package
+// Generated 14-dic-2016 13:35:27 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -30,7 +30,7 @@ public class Sorteos implements java.io.Serializable {
 	private Byte num6;
 	private Byte comp;
 	private Byte rein;
-	private Set boletoses = new HashSet(0);
+	private Set<Boletos> boletoses = new HashSet<Boletos>(0);
 
 	public Sorteos() {
 	}
@@ -41,7 +41,7 @@ public class Sorteos implements java.io.Serializable {
 	}
 
 	public Sorteos(long idSorteo, Date fechaSorteo, Byte num1, Byte num2, Byte num3, Byte num4, Byte num5, Byte num6,
-			Byte comp, Byte rein, Set boletoses) {
+			Byte comp, Byte rein, Set<Boletos> boletoses) {
 		this.idSorteo = idSorteo;
 		this.fechaSorteo = fechaSorteo;
 		this.num1 = num1;
@@ -149,11 +149,11 @@ public class Sorteos implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "sorteos")
-	public Set getBoletoses() {
+	public Set<Boletos> getBoletoses() {
 		return this.boletoses;
 	}
 
-	public void setBoletoses(Set boletoses) {
+	public void setBoletoses(Set<Boletos> boletoses) {
 		this.boletoses = boletoses;
 	}
 

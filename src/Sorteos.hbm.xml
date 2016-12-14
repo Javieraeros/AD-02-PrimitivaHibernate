@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 13-dic-2016 13:35:59 by Hibernate Tools 4.3.1.Final -->
+<!-- Generated 14-dic-2016 13:35:27 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
-    <class name="model.Sorteos" table="Sorteos" schema="dbo" optimistic-lock="version">
+    <class name="Sorteos" table="Sorteos" schema="dbo" optimistic-lock="version">
         <id name="idSorteo" type="long">
             <column name="IdSorteo" />
             <generator class="assigned" />
@@ -39,7 +39,7 @@
             <key>
                 <column name="IdSorteo" not-null="true" />
             </key>
-            <one-to-many class="model.Boletos" />
+            <one-to-many class="Boletos" />
         </set>
     </class>
 </hibernate-mapping>

@@ -5,8 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import model.Boletos;
-import model.Sorteos;
 
 public class Prueba {
 	
@@ -14,7 +12,8 @@ public class Prueba {
 	
 	public static void main(String[] args){
 		// TODO No funciona :(
-		
+
+		Scanner teclado=new Scanner(System.in);
 		Session session = null;
         try {
             try {
@@ -23,15 +22,16 @@ public class Prueba {
  
                 System.out.println("Insertando registro");
                 Transaction tx = session.beginTransaction();
-                Date fecha=new Date(2018, 5, 15);
-                Sorteos miSorteo=new Sorteos(10,fecha);
+                Date fecha=new Date();
+                
+                Sorteos miSorteo=new Sorteos(6969,fecha);
         		System.out.println("Sorteo con id: "+miSorteo.getIdSorteo());
         		System.out.println("Reintegro del Sorteo: "+miSorteo.getRein());
         		System.out.println("Intoduce un nuevo reintegro");
-        		Scanner teclado=new Scanner(System.in);
-        		System.out.println("Vete al ssms");
                 session.save(miSorteo);
+
         		miSorteo.setRein(teclado.nextByte());
+        		System.out.println("Vete al ssms");
                 tx.commit();
                 System.out.println("Finalizado...");
             } catch (Exception e) {

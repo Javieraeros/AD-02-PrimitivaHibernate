@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 13-dic-2016 13:35:59 by Hibernate Tools 4.3.1.Final -->
+<!-- Generated 14-dic-2016 13:35:27 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
-    <class name="model.Boletos" table="Boletos" schema="dbo" optimistic-lock="version">
-        <composite-id name="id" class="model.BoletosId">
+    <class name="Boletos" table="Boletos" schema="dbo" optimistic-lock="version">
+        <composite-id name="id" class="BoletosId">
             <key-property name="idBoleto" type="long">
                 <column name="IdBoleto" />
             </key-property>
@@ -12,7 +12,7 @@
                 <column name="IdSorteo" />
             </key-property>
         </composite-id>
-        <many-to-one name="sorteos" class="model.Sorteos" update="false" insert="false" fetch="select">
+        <many-to-one name="sorteos" class="Sorteos" update="false" insert="false" fetch="select">
             <column name="IdSorteo" not-null="true" />
         </many-to-one>
         <property name="reintegro" type="byte">
@@ -32,7 +32,7 @@
                 <column name="IdBoleto" not-null="true" />
                 <column name="IdSorteo" not-null="true" />
             </key>
-            <one-to-many class="model.NumerosBoletos" />
+            <one-to-many class="NumerosBoletos" />
         </set>
     </class>
 </hibernate-mapping>

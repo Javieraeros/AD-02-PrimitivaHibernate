@@ -5,7 +5,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import model.Sorteos;
 
 public class SorteosFactory {
 
@@ -19,6 +18,9 @@ public class SorteosFactory {
 																			// from
 																			// hibernate.cfg.xml
 			configuration.addAnnotatedClass(Sorteos.class);
+			configuration.addAnnotatedClass(Boletos.class);
+			configuration.addAnnotatedClass(NumerosBoletos.class);
+			//configuration.addAnnotatedClass(Boletos.class);
 			StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
 
 			// If you miss the below line then it will complaing about a missing
