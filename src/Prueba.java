@@ -24,15 +24,19 @@ public class Prueba {
                 Transaction tx = session.beginTransaction();
                 Date fecha=new Date();
                 
-                Sorteos miSorteo=new Sorteos(6969,fecha);
+                Sorteos miSorteo=new Sorteos(69,fecha);
         		System.out.println("Sorteo con id: "+miSorteo.getIdSorteo());
         		System.out.println("Reintegro del Sorteo: "+miSorteo.getRein());
         		System.out.println("Intoduce un nuevo reintegro");
                 session.save(miSorteo);
 
+                tx.commit();
+                
+                tx=session.beginTransaction();
         		miSorteo.setRein(teclado.nextByte());
         		System.out.println("Vete al ssms");
-                tx.commit();
+        		tx.commit();
+        		
                 System.out.println("Finalizado...");
             } catch (Exception e) {
                 System.out.println(e.getMessage());

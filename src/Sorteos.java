@@ -1,5 +1,5 @@
 // default package
-// Generated 14-dic-2016 13:35:27 by Hibernate Tools 4.3.1.Final
+// Generated 19-dic-2016 9:00:20 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
 import java.util.HashSet;

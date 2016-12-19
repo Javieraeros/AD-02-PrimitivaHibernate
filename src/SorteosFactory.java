@@ -20,7 +20,6 @@ public class SorteosFactory {
 			configuration.addAnnotatedClass(Sorteos.class);
 			configuration.addAnnotatedClass(Boletos.class);
 			configuration.addAnnotatedClass(NumerosBoletos.class);
-			//configuration.addAnnotatedClass(Boletos.class);
 			StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder();
 
 			// If you miss the below line then it will complaing about a missing
